@@ -1,0 +1,19 @@
+/* Usermanagement */
+
+.search{
+    text-align:right;             /* Positioniert die Suche auf der Rechten Seite, visuell entgegengesetzt zu den anderen Buttons, um diese zu entzerren */
+}
+
+.searchcontainer button{
+
+  border: none;                       /* Entfernt die Umrandung um den Suchknopf */
+  width: 100px;                       /* Erweitert die Breite des Buttons */
+  color: #fff;                        /* Ändert die Schriftfarbe auf ein Weiß */
+  background-color: #2196F3;          /* Ändert die Hintergrundfarbe auf ein Blau, um die Möglichkeit zum Drücken zu visualisieren */
+  height: 32px;                       /* Erhöht die Schriftgröße des Suchbuttons */
+}
+
+.searchcontainer button:hover{
+  background: #417FF9;                /* Ändert die Hintergrundfarbe beim Hovern über den Button */
+  cursor: pointer;                    /* Wechselt den cursor beim Hovern in einen Finger, um auch hier das drücken zu visualisieren */
+}

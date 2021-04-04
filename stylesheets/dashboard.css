@@ -1,0 +1,72 @@
+/* -------------- dashbaord.php ------------------------- */
+
+.status-box-wrapper{                          /*Gestaletet die Grid-Box, in welcher einzelne Boxen, kurze Informationen liefern */
+  margin: 35px 30px 10px 30px;                /* Vergrößert den Außenabstand, um das DIV zu entzerren */
+  display: grid;                              /* Definiert die Verwendung des Typs Grid */
+  grid-template-columns: 1fr 1fr 1fr 0fr;     /* Mit der zugehörigen Anordung der Grid-Elemente */
+  grid-gap: 10px;                             /* Vergrößert die Abstände zwischen den Grids, um diese zu entzerrem */
+}
+
+.status-box{
+  width: 300px;                               /* Reduziert die Breite der einzelnen Container im Grid */
+  height: 100px;                              /* Vergrößert die Höhe der Grids, um die entahltenen Zahlen Größer darstellen zu können */
+}
+
+/* Verändert die Farben der einzelnen Boxen, um sie visuell zu unterscheiden */
+.green-box{
+  background-color: green;
+}
+
+.yellow-box{
+  background-color: yellow;
+}
+
+.blue-box{
+  background-color: blue;
+}
+
+.red-box{
+  background-color: red;
+}
+
+p.status-box-description{
+  background-color: white;                  /* Ändert die Hintergundfarbe der Beschreibung, damit diese sich von den farbigen Feldern abhebt */
+  width: 180px;                             /* Vergrößert die Breite, um der Beschreibung ausreichend Platz zu geben */
+  position: absolute;                       /* Sorgt dafür das dieses und nachfolgende Elemente unabhängig von der Webseite plaziert werden können */
+  height: 60px;                             /* Erhäht die Höhe, auf die des Eltern-DIVS, um das Feld vollstädnig zu füllen */
+  padding: 10px;                            /* Vergrößert den Innenabstand des Elementes */
+  padding-top: 30px;                        /* Erweiter den Innenabstand nach oben nochmals, um die Beschreibung zu zentrieren */
+  text-align: center;                       /* Zentriert die Schift in der Mitte des Elementes */
+  font-size: 30px;                          /* Erhöht die Schriftgröße */
+  margin-top: 0px;                          /* Emtfernt den Marginabstand aus übergeordneten Klassen, um die BEschreibung zu zentrieren */
+}
+
+p.status-box-value{
+  width:100px;                                 /* Reduziert die Breite, um der Werte um passend in der Farbbox zu liegen */
+  color: white;                                /* Ändert die Schriftfarbe auf ein weiß, welches sich vom Hintergrund abhebt */
+  margin-left: 200px; margin-block-start: 0px; /* Verschiebt den Wert, auf die Rechte Seite des Eltern-Divs */
+  font-size: 70px;                             /* Erhöht die Schriftgröße */
+  text-align: center;                          /* Zentriert die Schift in der Mitte des Elementes */
+}
+
+
+.overview-tables-wrapper{
+  background-color: #fff;                     /* Ändert die Hintergrundfarbe des Hautpgrids, um dieses vom Rest der Webeite abzuheben */
+  border-radius: 5px;                         /* Rundet aus Designgründen die Ecken des Divs ab */
+  padding: 20px;                              /* Erhöht den Innenabstand zu den einzelnen Tabellen, um den Inhalt zu entzerren */
+  display: grid;                              /* Definiert die Verwendung des Typs Grid */
+  grid-template-columns: 1fr 1fr;             /* Mit der zugehörigen Anordung der Grid-Elemente */
+  grid-gap: 20px;                             /* Vergrößert die Abstände zwischen den Grids, um diese zu entzerrem */
+
+}
+
+.overview-table{
+  background-color: rgb(245, 245, 245);       /* Setzt den Hintergrund der Tabellen auf ein Hellgrau, um sie erneut vom weißen Hintergund abzuheben */
+  min-height: 400px;                          /* Erhöht die Minimale Größe, um die Tabellen größer zu machen, und somit die Seite zu füllen */
+
+}
+
+.overview-table-headline p{
+  font-size: 18px;                            /* Vergrößert die Schriftgröße der Tabellebenüberschriften */
+  font-weight: bolder;                        /* Setzt die Schrift auf Fett, um die Funktion als Überschrift zu verdeutlichen */
+}

@@ -1,0 +1,78 @@
+*{
+  box-sizing:inherit;        /* Legt fest, dass die Eigenschaften von der übergeordneten Klasse (Parent) übernommen werden */ 
+}
+
+/* Importieren der Google-Font "Poppins" */
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+body {
+     font-family: Poppins;  /* Nutzt im gesamten Body die Schriftart Poppinss */
+}
+
+.containerFooter {
+  position: absolute;         /* Positioniert das DIV an einer fest bestimmten Stelle */
+  right: 0;bottom:0;left:0;   /* In diesem Fall am unteren Bildschirmrand */
+  margin: auto;               /* Und mithilfe von margin:auto zentriert am unteren Rand */
+}
+
+.row {
+  display: flex;            /* Sorgt dafür, dass die folgenden DIVs, je nach Bildschirm, Nebeneinader positioniert werden */
+}
+
+.about {
+    width: 50%;            /* Beschränkt die Breite des ersten DIVs auf 50% der Fläche der Klasse "row" */
+    margin-left: 15px;     /* Verschiebt das DIV etwas nach rechts, um den Bildschirmrand zu entzerren */
+  }
+
+.categorie {
+    width: 25%;            /* Die restlichen beiden Elemente werden jeweils auf 25% aufgeteilt, um 100% in der Klasse "row" zu erreichen */
+}
+
+.containerFooter h6 {
+  color:#2F709B;             /* Anpassen der Überschriften der Kategorien, analog der Farbe des Logos */
+  font-size:16px;            /* Vergrößern der Schriftart auf 16px, um durch h3 etc. nicht zu viel Raum einzunehmen */
+  text-transform:uppercase;  /* Aus Designgründen wird die Überschrift in Großbuchstaben geschrieben */
+  letter-spacing:2px;        /* Dabei sind die Buchstabenabstände etwas größer als gewöhnlich */
+  margin:5px 0 0 0;          /* Verringert den Abstand zur Trennlinie, um weniger Platz einzunehmen */
+}
+
+.footer-links {
+  padding-left: 0;          /* Sorgt dafür, dass keine Listen typische Versetzung der Punkte stattfindet */
+  list-style:none;          /* Entfernt die Listenzeichen vor den einzelnen Punkten */
+}
+
+.footer-links li {
+  display:block;            /* Reiht die einzelnen Punkte untereinander an */
+}
+
+.footer-links a {
+  color:#737373;            /* Passt die Farbe der verknüpften Links an, um ein einheitliches Bild zu liefern */
+}
+
+.footer-links a:hover {
+  color:#417FF9;            /* Verändert die Farbe des Links, beim Hovern über diesen */
+  text-decoration:none;     /* Sowie die Entfernung der Link Unterstreichung */
+}
+
+
+/* Sorgt dafür, dass je nach Größe des Bildschirms, die Breite der Navigationsleiste beschränkt wird */
+@media (min-width: 576px) {
+  .containerFooter {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .containerFooter {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .containerFooter {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .containerFooter {
+    max-width: 1030px;
+  }
+}

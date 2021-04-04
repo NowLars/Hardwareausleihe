@@ -1,0 +1,338 @@
+/* Importieren der Google-Font "Poppins" */
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+
+body {
+     font-family: Poppins;  /* Nutzt im gesamten Body die Schriftart Poppins */
+     margin: 0;             /* Verringert die Abstände, um die Nav-Bar am oberen Bildschirmrand zu positionieren */
+}
+
+/* --------------------- Datenbanktest.php --------------------- */
+.notd{
+  text-decoration: none;                        /* Erzeugen einer Klasse, um Link Unterstreichungen zu entfernen */
+}
+
+
+
+.overlay {
+  z-index:3;                                    /* Sorgt dafür, dass das Eingabeformular vor allen anderen Elementen der Webseite angezeigt wird (auf der höchsten Ebene) */
+  background-color:rgba(0,0,0,0.4);             /* Verdunkelt den Hintergrund, im Form eines Schwarzen Hintergrunds mit hoher Transparenz, um die Aufmerksamkeit auf die Eingabemaske zu lenke */
+  transition: opacity 200ms;                    /* Verlangsamt das Öffnen des Pop-up-Fensters auf Designgründen */
+  visibility: hidden; opacity: 0;               /* Sorgt dafür, dass das Pop-up-Fenster zunächst nicht angezeigt wird */
+  overflow: auto;                               /* Erzeugt, einen Scrollbalken, sollte der Inhalt zu lange sein */
+/* Alle nachfolgenden Punkte dienen dazu, den gesamten Hintergrund mithilfe der vorherigen Funktion abzudunkeln */
+  position:fixed; left:0;top:0; bottom: 0;right: 0;
+  width: 100%;
+  height: 100%;
+}
+.overlay:target {
+  visibility: visible;                           /* Bildet das Gegenstück zur vorherigen Klasse, wird ein Button gedrückt, */
+  opacity: 1;                                    /* erscheint das Pop-up-Fenster mit den entsprechenden Elementen */
+}
+
+.eoverlay {
+  z-index:3;                                    /* Sorgt dafür, dass das Eingabeformular vor allen anderen Elementen der Webseite angezeigt wird (auf der höchsten Ebene) */
+  background-color:rgba(0,0,0,0.4);             /* Verdunkelt den Hintergrund, im Form eines Schwarzen Hintergrunds mit hoher Transparenz, um die Aufmerksamkeit auf die Eingabemaske zu lenke */
+  transition: opacity 200ms;                    /* Verlangsamt das Öffnen des Pop-up-Fensters auf Designgründen */
+  visibility: visible; opacity: 1;              /* Hier muss mit visibility: visible gearbeitet werden, da ansonsten die Formatierung des Fensters bei öffnen nicht korrekt funktionier */
+  overflow: auto;                               /* Erzeugt, einen Scrollbalken, sollte der Inhalt zu lange sein */
+  /* Alle nachfolgenden Punkte dienen dazu, den gesamten Hintergrund mithilfe der vorherigen Funktion abzudunkeln */
+  position:fixed; left:0;top:0; bottom: 0;right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Verändert den Inhalt des Pop-up-Fensters */
+.popup {
+  margin: 100px auto;                            /* Verschiebt das Pop-up-Fenster um 100px nach unten und zentriert es durch "auto" */
+  padding: 20px;                                 /* Vergrößert den Innenabstand, um die Elemente zu entzerren */
+  background: #fff;                              /* Ändert den Hintergrund auf Weiß */
+  border-radius: 10px;                           /* Rundet aus Designgründen das Fenster ab */
+  max-width: 600px;                              /* Beschränkt die Breite des Fensters, damit es nicht über den gesamten Bildschirm geht */
+  position: relative;                            /* Positioniert folgende Elemente (Das X zum Abbrechen) in Relation zur Position des DIVs */
+  z-index: 10;                                   /* Sorgt dafür, dass der Inhalt in jedem Fall vor jedem anderen Content ist */
+  box-sizing:border-box;                         /* Beschränkt die Breite der folgenden DIVs auf die Breite des Hauptelementes, um Scrollbalken zu verhindern */
+}
+
+.register {
+  margin-bottom: 5px;                            /* Erweitert den Abstand zwischen dem Knopf "login" und "Jetzt Registrieren" */
+}
+
+/* Passt den Verlassenknopf "X" oben Rechts in der Eingabemaske an */
+.close {
+  position:absolute; right:0; top:0;                 /* Legt eine absolute Position fest, welche sich oben Rechts in der Maske befindet */
+  font-size:25px;                                    /* Erhöht die Schriftart im Vergleich zum Standard auf 25px, um das X deutlicher anzuzeigen */
+  border-radius: 10px;                               /* Rundet auf Designgründen die Ecken des X-Knopfes ab */
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+  cursor:pointer;                                    /* Verändert den Cursor auf einen "Finger" beim Hovern über das X, auch hier um das Drücken anzuzeigen */
+  padding:8px 16px;                                  /* Vergrößert den Innenabstand, um eine größere Fläche zum Drücken des X-Knopfes zu schaffen */
+
+}
+
+.close:hover {
+  color:#fff;                                        /* Verändert die Schriftfarbe des X auf ein Weiß, um es von Hintergrund abzuheben */
+  background-color:#f44336;                          /* Verändert den Hintergrund auf ein Rot, um das Verlassen visuell zu verdeutlichen */
+}
+
+
+.center .img-container{
+  margin: auto;                                      /* Zentriert das Logo, in der Mitte des Pop-up-Fensters */
+  width: 30%;                                        /* Reduziert die Größe des Logos der Schule auf 30% */
+}
+
+/* Passt die Allgemeinen Eingabefelder an */
+.input{
+  padding:8px;                                       /* Erhöht den Innenabstand in alle Richtungen, um die Felder zu entzerren */
+  display: inline-block;                             /* Sorgt dafür, dass die einzelnen Eingabefelder untereinander angezeigt werden */
+  border:none;                                       /* Entfernt die Standardumrandung bei einem Input-Feld */
+  border-bottom:1px solid #ccc;                      /* Fügt im nächsten Schritt die Border unten hinzu, um die Eingabemöglichkeit weiter anzuzeigen */
+  width:100%;                                        /* Vergrößert die Breite der Eingabefelder auf die gesamte Länge der Maske */
+  margin-bottom:16px;                                /* Erhöht den Abstand zwischen den einzelnen Feldern, auch hier um die Eingabe zu entzerren */
+}
+
+.notice-text{                                        /* Bearbeitet den Text, welcher z.B. zur Löschbestätigung angezeigt wird */
+  text-align:center;                                 /* Zentriert den Text mittig */
+  margin: 10px 0 30px 0;                             /* Mit zusätzlichem Abstand nach oben und unten */
+
+}
+
+.content{
+  /* Platzhalter, falls der Inhalt des Modals bearbeitet werden muss */
+}
+/* --------- Ab hier findet die Definition der einzelnen Buttons statt --------- */
+
+.accept-button{
+  border: none;                                 /* Entfernt den Rand um den Button */
+  display: block;                               /* Beginnt eine neue Reihe und nutzt dieses komplett */
+  width:100%;                                   /* Erweitert die Fläche auf die gesamte Länge des Blocks */
+  color: #fff;                                  /* Setzt die Schriftfarbe auf ein Weiß */
+  background-color: rgb(0, 109, 0);             /* Mit grünem Hintergrund als Kontrast und zur Visualisierung */
+  padding: 8px 16px;                            /* Vergrößert die Innenabstände, um den Button größer wirken zu lassen */
+  text-decoration: none;                        /* Entfernt die Unterstreichungen, welche für Links typisch sind */
+  margin-bottom: 10px;                          /* Erstellt einen Abstand nach unten zum nächsten Element */
+  cursor: pointer;                              /* Ändert den Cursor zu einem Finger, um die Möglichkeit zum Drücken zu visualisieren */
+}
+.accept-button:hover {
+  background-color:rgba(0, 71, 0, 1);           /* Ändert die Hintergrundfarbe in ein dunkleres Grün, auch hier um die Möglichkeit zum Drücken zu visualisieren */
+}
+
+/* Alle weiteren Buttons sind nach dem gleichen Prinzip aufgebaut und werden daher nicht weiter erläuter */
+.deny-button{
+  border: none;
+  display: block;
+  color: #fff;
+  background-color: #f44336;
+  padding: 8px 16px;
+  width:100%;
+  text-decoration: none;
+}
+.deny-button:hover {
+  background-color:#ae1409;
+  cursor: pointer;
+}
+
+
+.subButton{
+  width:100%;
+  border: none;
+  color: white;
+  background-color:#2196F3;
+  padding:8px;
+}
+.subButton:hover{
+    cursor:pointer;
+    background-color:#2F709B;
+}
+
+
+.edit-button{
+  border: none;
+  display: block;
+  width: 85px;
+  height: 30px;
+  color: #fff;
+  background-color: rgb(255, 204, 62);
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 5px;
+  cursor: pointer;
+}
+.edit-button:hover {
+  background-color: rgba(194, 142, 0, 1);
+  cursor: pointer;
+}
+
+
+.delete-button{
+  border: none;
+  display: block;
+  width: 85px;
+  height: 30px;
+  color: #fff;
+  background-color: #f44336;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 5px;
+  cursor: pointer;
+}
+.delete-button:hover {
+  background-color: #a01308;
+  cursor: pointer;
+}
+
+
+.delete{
+  border: none;
+  display: inline-block;
+  color: #fff;
+  background-color: #cf0000;
+  padding: 8px 16px;
+  font-size: 15px;
+}
+.delete:hover{
+  background-color: #a01308;
+  cursor: pointer;
+}
+
+
+.buttons{
+  display: flex;                            /* Sorgt dafür, dass die Buttons nebeneinader plaziert werden */
+  align-items : center;                     /* Und durch die unterschiedliche Größe jeweils mittig auf eine Linie gebracht werden */
+  justify-content:space-around;             /* Erstellt einen Abstand um die Buttons */
+  max-width: 265px;                         /* BEschränkt die größe des DIVs um die Buttons, um diese nicht über den ganzen Bildschirm zu verteilen */
+}
+
+.add{
+  border: none;
+  display: inline-block;
+  width: 32px;
+  color: #fff;
+  background-color: #2196F3;
+  padding: 3px 3px;
+  font-size: 22px;
+  text-align: center;
+}
+.add:hover {
+  background-color: #08599b;
+  cursor: pointer;
+}
+/*----------------------------------------------------------------------------------------------------*/
+
+
+/* Passt die Icons (? etc.) innerhalb des Pop-up-Fensters an */
+.status-icon{
+  font-size:80px;                                       /* Vergrößert die Schriftart auf 80px; */
+  text-align: center;                                   /* Zentriert das Icon in der Mitte des Fensters */
+  margin-bottom: 15px;                                  /* Vergrößert den Abstand nach unten */
+}
+
+.wrapperinandadd{
+  display:flex;                                         /* Positioniert die Elemente innerhalb dieses DIVs Nebeneinader */
+
+}
+
+
+/* Passt den Style der Ausgabetabelle von der Datenbank an */
+.table {
+  border-collapse: collapse;                          /* Reduziert die Tabelle auf eine gemeinsame Border, statt eine Border um jedes Element */
+  width:100%;                                         /* Vergrößert die Breite der Tabelle auf die gesamte Breite des Container-DIVs */
+  text-align: center;                                 /* Zentriert die Elemente alle Daten innerhalb der Tabelle */
+  background-color: white;                            /* Setzt einen weißen Hintergrund, um den Inhalt vom Rest der Webseite abzuheben */
+  border-radius: 10px;                                /* Rundet die Kanten der Tabelle aus Designgründen etwas ab */
+}
+
+th {
+  background-color: lightgrey;                       /* Ändern die Überschrift aller Tabellen in ein helles Grau */
+}
+
+td {
+  border-bottom: 1px solid #b9b9b9;                   /* Setzt eine Border unterhalb der Eingaben fest, um hier einen modernen Look zu erzeugen */
+}
+
+
+
+
+/* ------------- Deffiniert die kleineren Container ----------------  */
+.containerModal {
+  margin: auto;                                       /* Zentriert das DIV und somit alle nachfolgenden Elemente */
+}
+
+/* Sorgt dafür, dass je nach Größe des Bildschirms, die Breite des Containers, mit dem Inhalt beschränkt wird */
+@media (min-width: 576px) {
+  .containerModal {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .containerModal {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .containerModal {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .containerModal {
+    max-width: 1030px;
+  }
+}
+
+
+/* --------------- Deffiniert den größeren Container --------------------  */
+.container {
+  margin: auto;                                /* Zentriert das Hautp-DIV mit allen folgenden Elementen mittig auf dem Bildschirm */
+}
+
+/* Sorgt dafür, dass je nach Größe des Bildschirms, die Breite des Containers, mit dem Inhalt beschränkt wird */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1630px;
+  }
+}
+
+
+/*Passt das Browseraussehen so an, dass wir einen eineheitlichen Look wie in Chrome haben*/
+select {
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: menulist;
+  -webkit-appearance: menulist;
+  -moz-appearance: nomenulist;
+  box-sizing: border-box;
+  align-items: center;
+  white-space: pre;
+  -webkit-rtl-ordering: logical;
+  background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+  cursor: default;
+  margin: 0em;
+  font: 400 13.3333px Arial;
+  border-radius: 0px;
+  height: 35px;
+}

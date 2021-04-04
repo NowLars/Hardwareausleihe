@@ -1,0 +1,12 @@
+.wrapper-request{
+  max-width: 700px;                              /* Beschränkt die Maximale Größe der gesamten Eingabe, damit diese nicht über den ganzen Bildschirm reicht */
+  margin: auto;                                  /* Zentriert das DIV in der Mitte des Bildschirms */
+  background-color: white;                       /* Passt die Hintergundfarbe auf ein weiß an, um den Inhalt vom Hintergund abzuheben */
+  padding: 5px 20px 5px 20px;                    /* Vergrößert die Innenabstände, auch hier um die Inhalte zu vom Rand zu entfernen */
+  border-radius: 20px;                           /* Rundet die Ecken des Eingabefeldes aus Designgründen ab */
+}
+
+.requestform{
+  display: block;                                /* Sorgt dafür, dass die einzelnen Eingabefelder untereinander angeordnet werden */
+  margin-bottom: 8px;                            /* Vergrößert die Abstände zwischen den einzelnen Feldern */
+}

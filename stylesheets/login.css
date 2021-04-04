@@ -1,0 +1,121 @@
+*{
+  box-sizing:inherit;                          /* Legt fest, dass die Eigenschaften von der übergeordneten Klasse (Parent) übernommen werden */
+}
+
+html{
+  font-size:15px;                              /* Setzt die Standardschriftgröße der Webseite auf 15px */
+}
+
+.container {
+  margin: auto;                                /* Zentriert das Hautp-DIV mit allen folgenden Elementen mittig auf dem Bildschirm */
+  text-align:center;                           /* Sorgt dafür, das neben dem DIV, auch dessen Inhalt zentriert wird */
+}
+
+
+button {
+  padding:8px 16px;                             /* Vergrößert den Abstand Oben/Unten sowie Rechts/Links in der Klasse Button */
+  cursor:pointer;                               /* Verändert das Aussehen des Mauszeigers auf einen "Finger" beim Hovern über den Button, um die Möglichkeit des Drückens anzuzeigen */
+  font-size: 18px;                              /* Vergrößert die Schriftart auf 18px, im Vergleich zum Standard von 15px */
+  border:1px solid #ccc;                        /* Reduziert die Präsenz der Boarder auf eine dünne Linie um den Button */
+}
+
+button:hover{
+  background-color:#ccc;                        /* Verändert die Hintergrundfarbe des Buttons beim Hovern über diesen, auch hier um die Drück Möglichkeit anzuzeigen */
+}
+
+/* Grundlegende Einstellungen für das Pop-up-Fenster der Eingabemaske */
+.containerModal {
+  padding:16px;                                /* Erhöht den Innenabstand zu den Input-Feldern, um diese vom Rand zu lösen */
+  box-sizing:border-box;                       /* Includiert Padding und Boarder innerhalb der maximalen Größe, um trotz Padding die maximale Größe einzuhalten */
+}
+
+.modal{
+  z-index:2;                                    /* Sorgt dafür, dass das Eingabeformular vor allen anderen Elementen der Webseite angezeigt wird (auf der höchsten Ebene) */
+  display:none;                                 /* Legt fest, dass die Maske erst nach Drücken des Knopfes angeziegt wird */
+  padding-top:100px;                            /* Verschiebt die Eingabemaske nach unten, um diese Zentral zu halten */
+  background-color:rgba(0,0,0,0.4);             /* Verdunkelt den Hintergrund, im Form eines Schwarzen Hintergrunds mit hoher Transparenz, um die Aufmerksamkeit auf die Eingabemaske zu lenke */
+  position:fixed; left:0; top:0;                /* Alle nachfolgenden Punkte dienen dazu, den gesamten Hintergrund mithilfe der vorherigen Funktion abzudunkeln */
+  width:100%;
+  height:100%;
+}
+
+.modal-content{
+  border-radius:10px;                              /* Rundet für ein moderneres Design die Ecken der Eingabemaske ab */
+  position:relative;                               /* Passt die Position, in Abhängigkeit mit der restlichen Webseite an */
+  margin:auto;                                     /* Positioniert die Maske zentral in der Mitte des Bildschirms (Abhängig vom Rechten und Linken Bildschirmrand)*/
+  background-color:#fff;                           /* Legt die Hintergrundfarbe der Eingabemaske auf Weiß fest */
+}
+
+.animate-zoom {                                     /* Hinzufügen eines Vergrößerung-Zoomeffektes, um die Eingabe modern zu gestalten */
+  animation:animatezoom 0.6s                        /* Gibt an, wie schnell der Zoom stattfindet */
+  }
+  @keyframes animatezoom{from{transform:scale(0)}   /* Sorgt dafür, dass der Zoom von klein zu groß (vollständige Eingabemaske) stattfindet */
+  to{transform:scale(1)}
+}
+
+.center{
+  margin: 0;
+}
+.centerImg {
+  margin: auto;     /* Zentrieren der Inhalte innerhalb der Flexbox */
+}
+
+/* Passt die Allgemeinen Eingabefelder an */
+.input{
+  padding:8px;                                       /* Erhöht den Innenabstand in alle Richtungen, um die Felder zu entzerren */
+  border:none;                                       /* Entfernt die Standard Umrandung bei einem Input-Feld */
+  border-bottom:1px solid #ccc;                      /* Fügt im nächsten Schritt die Border unten hinzu, um die Eingabemöglichkeit weiter anzuzeigen */
+  width:100%;                                        /* Vergrößert die Breite der Eingabefelder auf die gesamte Länge der Maske */
+  margin-bottom:16px;                                /* Erhöht den Abstand zwischen den einzelnen Feldern, auch hier um die Eingabe zu entzerren */
+}
+
+
+/* Passt den Verlassenknopf "X" oben Rechts in der Eingabemaske an */
+.exit{
+  font-size:25px;                                    /* Erhöht die Schriftart im Vergleich zum Standard auf 25px, um das X deutlicher anzuzeigen */
+  position:absolute; right:0; top:0;                 /* Legt eine absolute Position fest, welche sich oben Rechts in der Maske befindet */
+  border-radius: 10px;                               /* Rundet auf Designgründen die Ecken des X-Knopfes ab */
+  padding:8px 16px;                                  /* Vergrößert den Innenabstand, um eine größere Fläche zum Drücken des X-Knopfes zu schaffen */
+  cursor:pointer;                                    /* Verändert den Cursor auf einen "Finger" beim Hovern über das X, auch hier um das Drücken anzuzeigen */
+}
+.exit:hover{
+  color:#fff;                                        /* Verändert die Schriftfarbe des X auf ein Weiß, um es von Hintergrund abzuheben */
+  background-color:#f44336;                          /* Verändert den Hintergrund auf ein Rot, um das Verlassen visuell zu verdeutlichen */
+}
+
+/* Anpassen des Aussehens des Buttons "Eintrag hinzufügen" in der Eingabemaske */
+.submitButton{
+  width:100%;                                         /* Vergrößert die Fläche des Submit-Buttons auf die gesamte Breite der Eingabemaske */
+  border: none;                                       /* Entfernt aus Designgründen den Rand um den Knopf */
+  color: white;                                       /* Verändert die Schriftfarbe auf ein Weiß, um dieses vom Hintergrund abzuheben */
+  background-color:#2196F3;                           /* Passt die Hintergrundfarbe, entsprechend dem Designkonzept, auf ein Blau an */
+  padding:8px;                                        /* Erweitert die Innenabstände, um die Fläche des Buttons zu vergrößern */
+}
+
+.submitButton:hover{
+    cursor:pointer;                                   /* Verändert den Cursor auf einen "Finger" beim Hovern, um die Möglichkeit zum Drücken anzuzeigen */
+    background-color:#2F709B;                         /* Setzt die Hintergrundfarbe auf ein dunkleres Blau, um die Abgabe zu visualisieren */
+}
+
+
+/* Sorgt dafür, dass je nach Größe des Bildschirms, die Breite des Containers, mit dem Inhalt beschränkt wird */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1030px;
+  }
+}

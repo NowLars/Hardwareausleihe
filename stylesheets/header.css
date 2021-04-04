@@ -1,0 +1,74 @@
+/* Importieren der Google-Font "Poppins" */
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+html {
+     scsroll-behavior: smooth;                                              /* Sorgt für ein angenehmeres Scrollen ohne Ruckler */
+     background: url(../img/Background.jpg) no-repeat center center fixed; /* Ändert den Hintergrund, welcher wiederum zentriert dargestellt wird */
+   }
+
+body {
+     font-family: Poppins;  /* Nutzt im gesamten Body die Schriftart Poppins */
+     margin: 0;             /* Verringert die Abstände, um die Nav-Bar am oberen Bildschirmrand zu positionieren */
+}
+
+img {
+  max-width: 75%;          /* Verringert die maximale Breite des Logos */
+  margin-left: 20px;       /* Versetzt das Logo weiter nach rechts, um dieses näher an den Links zu halten */
+}
+
+hr {
+  margin-top: -15px;         /* Verschiebt die Trennlinie weiter nach oben, um eine besser Zugehörigkeit herzustellen */
+}
+
+.containerHeader {
+  padding-top: 20px;        /* Vergrößert den Abstand der Nav-Bar nach oben, um den Aufbau zu entzerren */
+  margin-right: auto;
+  margin-left: auto;           /* Zentriert das DIV mittig auf dem Bildschirm */
+}
+
+.row {
+  display: flex;            /* Sorgt dafür, dass die folgenden DIVs, je nach Bildschirm, Nebeneinader positioniert werden */
+}
+
+
+.center {
+  display: flex;            /* Anpassen der Art des DIVs auf Flexbox */
+  align-items: center;      /* Zentrieren der Inhalte innerhalb der Flexbox */
+}
+
+.nav-link {
+    padding: 0 16px 0 25px; /* Vergrößert die Abstände zwischen den Links, um die Nav-Bar zu entzerren */
+    color: #2F709B;         /* Anpassen der Schriftfarbe der Links, auf die des Logos */
+    font-size: 16pt;        /* Passt die Schriftgröße auf 16pt an */
+    text-decoration: none;  /* Entfernt die für Links typische Unterstreichung */
+}
+.nav-link:hover {
+    color: #417FF9;          /* Ändern die Schriftfarbe beim Hovern über den Link, auf ein Hellers Blau im Vergleich zu Logo */
+}
+
+
+/* Sorgt dafür, dass je nach Größe des Bildschirms, die Breite der Navigationsleiste beschränkt wird */
+@media (min-width: 576px) {
+  .containerHeader {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .containerHeader {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .containerHeader {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .containerHeader {
+    max-width: 1030px;
+  }
+}
+
+.containerModal {
+  box-sizing:border-box;                       /* Includiert Padding und Boarder innerhalb der maximalen Größe, um trotz Padding die maximale Größe einzuhalten */
+}
